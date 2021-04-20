@@ -7,12 +7,22 @@ function InitDashboard() {
     console.log("InitDashboard()");
 
     //populate dropdown
-    var selector = d3.select("#sel-Dataset");
+    var selector = d3.select("#selDataset");
 
     //read data from samples.json using D3
-    d3.json("data/samples.json").then(function(data) {
+    d3.json("data/samples.json").then(data => {
         console.log(data);
+
+        var sampleNames = data.names;
+
+        sampleNames.forEach(sampleId => {
+            selector.append("option")
+                .text(sampleId)
+                .property("value", sampleId);
+        });
     });
+
+
 
 
 
