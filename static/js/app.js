@@ -41,11 +41,12 @@ function drawBargraph(sampleId) {
 
     });
 }
-
+//DRAW BUBBLECHART
 function drawBubblechart(sampleId) {
     console.log(`drawBubblechart(${sampleId})`);
 }
 
+//DRAW SHOWMETADATA
 function showMetadata(sampleId) {
     console.log(`showMetadata (${sampleId})`);
 }
