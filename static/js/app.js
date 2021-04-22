@@ -91,6 +91,20 @@ function drawBubblechart(sampleId) {
 //DRAW SHOWMETADATA
 function showMetadata(sampleId) {
     console.log(`showMetadata (${sampleId})`);
+
+    d3.json("data/samples.json").then(data => {
+        console.log(data);
+
+        var samples = data.samples;
+        var resultArray = samples.filter(s => s.id == sampleId);
+        var result = resultArray[0];
+        console.log(result);
+        
+        var id = result.otu_ids;
+        var ethnicity = result.ethnicity;
+        
+
+    });
 }
 
 function optionChanged(newsampleId) {
