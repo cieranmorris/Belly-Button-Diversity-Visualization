@@ -43,8 +43,49 @@ function drawBargraph(sampleId) {
     });
 }
 //DRAW BUBBLECHART
+//CAN WE LOOP THROUGH THIS DATA ALREADY?
 function drawBubblechart(sampleId) {
     console.log(`drawBubblechart(${sampleId})`);
+
+    d3.json("data/samples.json").then(data => {
+        console.log(data);
+
+        var samples = data.samples;
+        var resultArray = samples.filter(s => s.id == sampleId);
+        var result = resultArray[0];
+       
+
+        var otu_ids = result.otu_ids;
+        var otu_labels = result.otu_labels;
+        
+
+        var sample_values = result.sample_values
+        console.log(sample_values);
+
+        //Use trace to create bubble chart markers
+        var bubbleTrace = {
+            x: otu_ids,
+            y: sample_values,
+            text: otu_labels,
+            mode: 'markers',
+            marker: {
+                size: sample_values,
+                color: otu_ids,
+            }
+
+        };
+
+        var bubbleData = [bubbleTrace];
+        var bubbleLayout = {
+            title: "OTU Abundance in Belly Button Biodiversity Analysis",
+            showlegend: false,
+            height: 600,
+            width: 1000
+        };
+
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout);
+
+    });
 }
 
 //DRAW SHOWMETADATA
