@@ -21,7 +21,7 @@ function drawBargraph(sampleId) {
         var sample_values = result.sample_values;
         // console.log(sample_values);
 
-        yticks = otu_ids.slice(0, 10).map(otuId => `OTU ${otu_Id}`).reverse();
+        yticks = otu_ids.slice(0, 10).map(otuId => `OTU ${otu_ids}`).reverse();
 
         var barData = {
             x: sample_values.slice(0, 10).reverse(),
