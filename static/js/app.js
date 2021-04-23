@@ -80,7 +80,17 @@ function drawBubblechart(sampleId) {
             title: "OTU Abundance in Belly Button Biodiversity Analysis",
             showlegend: false,
             height: 600,
-            width: 1000
+            width: 1000,
+            xaxis: {
+                title: {
+                    text: "OTU ID",
+                },
+            },
+            yaxis: {
+                title: {
+                    text: "Sample Values",
+                },
+            },
         };
 
         Plotly.newPlot("bubble", bubbleData, bubbleLayout);
