@@ -35,7 +35,17 @@ function drawBargraph(sampleId) {
         var barArray = [barData];
         var barLayout = {
             title: "Top 10 Bacteria Cultures Found",
-            margin: {t: 30, l: 150}
+            margin: {t: 30, l: 150},
+            xaxis: {
+                title: {
+                    text: "Sample Values"
+                },
+            },
+            yaxis: {
+                title: {
+                    text: "OTU IDs",
+                },
+            },
         }
 
         Plotly.newPlot("bar", barArray, barLayout);
@@ -71,8 +81,7 @@ function drawBubblechart(sampleId) {
             marker: {
                 size: sample_values,
                 color: otu_ids,
-            }
-
+            },
         };
 
         var bubbleData = [bubbleTrace];
