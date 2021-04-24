@@ -4,7 +4,7 @@ For this project, I built an interactive dashboard to explore the [Belly Button 
 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
-Languages utilized throughout this project included Javascript with D3 application and HTML.
+Languages utilized throughout this project included Javascript with D3 application and HTML. All interactive charts successfully update any time that a new sample is selected.
 
 ## Chart 1: Responsive Horizontal Bar Chart
 
@@ -38,14 +38,6 @@ Languages utilized throughout this project included Javascript with D3 applicati
 4. Display the sample metadata, i.e., an individual's demographic information.
 
 5. Display each key-value pair from the metadata JSON object somewhere on the page.
-
-
-
-6. Update all of the plots any time that a new sample is selected.
-
-Additionally, you are welcome to create any layout that you would like for your dashboard. An example dashboard is shown below:
-
-
 
 ## Visual 4 - Responsive Gauge Chart
 
