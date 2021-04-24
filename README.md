@@ -8,48 +8,51 @@ Languages utilized throughout this project included Javascript with D3 applicati
 
 ## Chart 1: Responsive Horizontal Bar Chart
 
-1. Use the D3 library to read in `samples.json`.
+ To initiate this project, I used the D3 library to read in `samples.json` from the provided dataset.
+ I then created a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual sample.
 
-2. Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
+* Values within the bar chart are based on `sample_values`.
 
-* Use `sample_values` as the values for the bar chart.
+* Labels for the axis representing operational taxonomic units is derived from `otu_ids`.
 
-* Use `otu_ids` as the labels for the bar chart.
-
-* Use `otu_labels` as the hovertext for the chart.
+* When hovering over a bar, the OTU labels are displayed using the key value `otu_labels`.
 
 
 ## Chart 2: Responsive Bubble Chart
 
-3. Create a bubble chart that displays each sample.
+ Following Plotly documentation, I effectively created a bubble chart that displays each sample.
 
-* Use `otu_ids` for the x values.
+* X values within the chart are represented as `otu_ids`.
 
-* Use `sample_values` for the y values.
+* Y values within the chart are represented as  `sample_values`.
 
-* Use `sample_values` for the marker size.
+* Sizes of the markers are determined based on `sample_values` size.
 
-* Use `otu_ids` for the marker colors.
+* Marker colors are coordinated by `otu_ids` under the color scheme `Portland`.
 
-* Use `otu_labels` for the text values.
+* As with the bar chart, hovering over the bubbles displays the appropriate OTU label based on `otu_labels` in the code.
 
 
 ## Visual 3 - Responsive Demographic Information Display
-4. Display the sample metadata, i.e., an individual's demographic information.
+ To provide a quick glance at sample metadata involvind an individual's demographic information, I effectively referenced each key-value pair from the metadatat JSON object to responsively display the following:
 
-5. Display each key-value pair from the metadata JSON object somewhere on the page.
+ * Sample ID
+
+ * Ethnicity
+
+ * Gender
+
+ * Age
+
+ * Location (City/State)
+
+ * Belly Button Type (Inner/Outer)
+
+ * Washing Frequency (WFREQ)
 
 ## Visual 4 - Responsive Gauge Chart
 
-The following task is advanced and therefore optional.
-
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
-
-* You will need to modify the example gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
-
-
+Following the documentation for creating a Gauge Chart (<https://plot.ly/javascript/gauge-charts/>), I created a responsive gauge chart which plots and scales the weekly washing frequency of the individual. This gauge operates on a scale of 0-9 with individually identified tick marks.
 
 ## Deployment
 
