@@ -80,7 +80,8 @@ function drawBubblechart(sampleId) {
             mode: 'markers',
             marker: {
                 size: sample_values,
-                color: otu_ids,
+                color: otu_ids, 
+                colorscale: "Portland"
             },
         };
 
@@ -114,13 +115,31 @@ function showMetadata(sampleId) {
     d3.json("data/samples.json").then(data => {
         console.log(data);
 
-        var samples = data.samples;
-        var resultArray = samples.filter(s => s.id == sampleId);
+        var metadata = data.metadata;
+        var resultArray = metadata.filter(s => s.id == sampleId);
         var result = resultArray[0];
         console.log(result);
         
-        var id = result.otu_ids;
-        var ethnicity = result.ethnicity;
+
+        //select handle using d3.select
+        var demoTable = d3.select("#sample-metadata");
+
+        //empty table
+        demoTable.html("");
+
+
+        Object.entries(result).forEach(function([key, value]) {
+            // var itemTag = console.log(`key ${key} value ${value}`)
+            var itemTag = `${key.toUpperCase()} : ${value}`;
+
+            demoTable.append("h6").text(itemTag)
+        });
+
+        var wfreq = result.wfreq;
+        createGauge(wfreq);
+
+        // var id = result.otu_ids;
+        // var ethnicity = result.ethnicity;
         
 
     });
@@ -135,6 +154,43 @@ function optionChanged(newsampleId) {
     showMetadata(newsampleId);
 }
 
+
+//Gauge 
+
+function createGauge(wfreq) {
+    console.log("creating gauge with ", wfreq);
+
+    var data = [
+        {
+          value: wfreq,
+          title: { text: "Washing Frequency" },
+          type: "indicator",
+          mode: "gauge+number",
+          gauge: {
+            axis: { range: [null, 9] },
+            steps: [
+              { range: [0, 1], color: "lightgray" },
+              { range: [1, 2], color: "gray" },
+              { range: [2, 3], color: "gray" },
+              { range: [3, 4], color: "gray" },
+              { range: [4, 5], color: "gray" },
+              { range: [5, 6], color: "gray" },
+              { range: [6, 7], color: "gray" },
+              { range: [7, 8], color: "gray" },
+              { range: [8, 9], color: "gray" },
+            ],
+            threshold: {
+              line: { color: "red", width: 4 },
+              thickness: 0.75,
+              value: 490
+            }
+          }
+        }
+      ];
+      
+      var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
+      Plotly.newPlot('gauge', data, layout);
+}
 
 function InitDashboard() {
     console.log("InitDashboard()");
