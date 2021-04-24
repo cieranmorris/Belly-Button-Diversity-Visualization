@@ -163,26 +163,27 @@ function createGauge(wfreq) {
     var data = [
         {
           value: wfreq,
-          title: { text: "Washing Frequency" },
+          title: { text: "Weekly Belly Button Washing Frequency" },
           type: "indicator",
           mode: "gauge+number",
           gauge: {
             axis: { range: [null, 9] },
+            bar:  {color:  "#00b3b3"},
             steps: [
-              { range: [0, 1], color: "#fff0e6" },
-              { range: [1, 2], color: "#ffe0cc" },
-              { range: [2, 3], color: "#ffd1b3" },
-              { range: [3, 4], color: "#ffc299" },
-              { range: [4, 5], color: "#ffb380" },
-              { range: [5, 6], color: "#ffa366" },
-              { range: [6, 7], color: "ff944d" },
-              { range: [7, 8], color: "#ff8533" },
-              { range: [8, 9], color: "#ff751a" },
+              { range: [0, 1], color: "#ffe0cc" },
+              { range: [1, 2], color: "#ffd1b3" },
+              { range: [2, 3], color: "#ffc299" },
+              { range: [3, 4], color: "#ffb380" },
+              { range: [4, 5], color: "#ffa366" },
+              { range: [5, 6], color: "ff944d" },
+              { range: [6, 7], color: "#ff8533" },
+              { range: [7, 8], color: "#ff751a" },
+              { range: [8, 9], color: "#ff6600" }
             ],
             threshold: {
-              line: { color: "red", width: 4 },
+              line: { color: "black", width: 4 },
               thickness: 0.75,
-              value: 490
+              value: wfreq
             }
           }
         }
