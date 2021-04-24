@@ -167,7 +167,7 @@ function createGauge(wfreq) {
           type: "indicator",
           mode: "gauge+number",
           gauge: {
-            axis: { range: [null, 9] },
+            axis: { range: [null, 9], tickwidth:  1, tickmode: "linear"},
             bar:  {color:  "#00b3b3"},
             steps: [
               { range: [0, 1], color: "#ffe0cc" },
