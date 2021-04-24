@@ -21,7 +21,6 @@ function drawBargraph(sampleId) {
         var sample_values = result.sample_values;
         // console.log(sample_values);
 
-        //DOUBLE CHECK IN TUTORING
         yticks = otu_ids.slice(0, 10).map(otuId => `OTU ${otuId}`).reverse();
 
         var barData = {
@@ -53,7 +52,6 @@ function drawBargraph(sampleId) {
     });
 }
 //DRAW BUBBLECHART
-//CAN WE LOOP THROUGH THIS DATA ALREADY?
 function drawBubblechart(sampleId) {
     console.log(`drawBubblechart(${sampleId})`);
 
@@ -137,9 +135,6 @@ function showMetadata(sampleId) {
 
         var wfreq = result.wfreq;
         createGauge(wfreq);
-
-        // var id = result.otu_ids;
-        // var ethnicity = result.ethnicity;
         
 
     });
@@ -155,7 +150,7 @@ function optionChanged(newsampleId) {
 }
 
 
-//Gauge 
+//Gauge Chart
 
 function createGauge(wfreq) {
     console.log("creating gauge with ", wfreq);
