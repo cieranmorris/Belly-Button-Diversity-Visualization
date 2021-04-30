@@ -1,5 +1,7 @@
 # Belly Button Biodiversity Dashboard Analysis
 
+![Overview](Images/dashboard_view.png)
+
 For this project, I built an interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
 
 The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
@@ -17,6 +19,8 @@ Languages utilized throughout this project included Javascript with D3 applicati
 
 * When hovering over a bar, the OTU labels are displayed using the key value `otu_labels`.
 
+![barchart](Images/otu_barchart.png)
+
 
 ## Chart 2: Responsive Bubble Chart
 
@@ -31,6 +35,8 @@ Languages utilized throughout this project included Javascript with D3 applicati
 * Marker colors are coordinated by `otu_ids` under the color scheme `Portland`.
 
 * As with the bar chart, hovering over the bubbles displays the appropriate OTU label based on `otu_labels` in the code.
+
+![bubblechart](Images/otu_bubblechart.png)
 
 
 ## Visual 3 - Responsive Demographic Information Display
@@ -50,9 +56,13 @@ Languages utilized throughout this project included Javascript with D3 applicati
 
  * Washing Frequency (WFREQ)
 
+ ![demographics](Images/demo_info.png)
+
 ## Visual 4 - Responsive Gauge Chart
 
 Following the documentation for creating a Gauge Chart (<https://plot.ly/javascript/gauge-charts/>), I created a responsive gauge chart which plots and scales the weekly washing frequency of the individual. This gauge operates on a scale of 0-9 with individually identified tick marks.
+
+![gauge](Images/wash_gauge.png)
 
 ## Deployment
 
